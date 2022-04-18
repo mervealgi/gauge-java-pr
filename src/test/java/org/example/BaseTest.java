@@ -1,5 +1,4 @@
-package com.example.test;
-
+package org.example;
 import com.thoughtworks.gauge.AfterScenario;
 import com.thoughtworks.gauge.BeforeScenario;
 import org.apache.commons.lang.StringUtils;
@@ -7,12 +6,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     public static WebDriver driver;
+    public static String testURL;
+    protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @BeforeScenario
     public static void setUp() throws MalformedURLException, Exception {
